@@ -84,7 +84,7 @@ SlideShow.implement({
 		// Replace transitions with its CSS postfixed variant
 		this.transitions.each(function(transition, name){
 			var cssTransition = this.transitions[name + 'CSS'];
-			if (cssTransition) {
+			if (!name.test(/CSS$/) && cssTransition){
 				this.transitions[name] = cssTransition;
 			}
 		});
