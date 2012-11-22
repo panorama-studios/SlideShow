@@ -257,6 +257,7 @@ SlideShow.defineTransitions({
 		data.previous.set('tween',{
 			duration: half,
 			onComplete: function(){
+				this.removeEvents('complete');
 				data.next.fade('in');
 			}
 		}).fade('out');
